@@ -3,3 +3,6 @@ Assignment 08/24/2017
 This assignment is to learn how to commit on gitkracken and getting familiar with gitkracken. 
 
 I'm going to be adding what happens on the shows I watch on TV.
+
+1. The first show I will be watching is "Divorce Court".
+	-There is a couple that is wanting a divorce because the womans husband keeps making errors and blames him for everything.
