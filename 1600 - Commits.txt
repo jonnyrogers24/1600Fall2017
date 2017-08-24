@@ -1,3 +1,5 @@
 Assignment 08/24/2017
 
 This assignment is to learn how to commit on gitkracken and getting familiar with gitkracken. 
+
+I'm going to be adding what happens on the shows I watch on TV.
