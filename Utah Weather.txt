@@ -7,3 +7,17 @@ Mostly Sunny
 0% Precipitation
 2% Humidity
 7mph Wind
+
+
+The source of this data was Google Search Engine.
+
+Wednesday
+Sunny
+
+96 degrees F
+
+0% Precipitation
+17% Humidity
+9mph Wind
+
+ 
