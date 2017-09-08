@@ -13,6 +13,13 @@ public class Vars : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		health -= 0.1f; 
+		if (health > 0)
+		{
+			health -= 0.1f;	
+		} else
+		{
+			print("YOU DIED");
+		}
+		 
 	}
 }
