@@ -1,0 +1,10 @@
+Conventions & Syntax
+
+Lets start with conventions.
+
+Conventions are what organizes your code. This can make code easier to read and is put in a simple format that is
+usually universal for coders to understand. 
+
+This would include making sure lines are well placed. Another example is indentation. An indentation should be equal for each opening
+and closing curly brace, and then further indent for opening and closing curly braces within the previous curly braces.
+
