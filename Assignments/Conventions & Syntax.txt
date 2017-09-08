@@ -8,3 +8,13 @@ usually universal for coders to understand.
 This would include making sure lines are well placed. Another example is indentation. An indentation should be equal for each opening
 and closing curly brace, and then further indent for opening and closing curly braces within the previous curly braces.
 
+Syntax is what makes up code. There are many things that fall under syntax. These are symbols and words that act together to execute code. 
+Periods are simple because they seperate a root object within code, and the period (.) followed by another word, is the sub object of the code.
+
+Semi-colans (;) also make up a part of syntax. These end statements
+
+Curly Braces Open and Close parts of code that need to be executed. 
+
+If you want to add a comment within the code, you would use a double back slash to indicate you are commenting.
+
+There are many parts that fall under sytax.
