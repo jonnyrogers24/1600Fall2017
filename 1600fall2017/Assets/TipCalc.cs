@@ -14,5 +14,6 @@ public class TipCalc : MonoBehaviour {
 	void Update () {
 		tipAmount = mealCost * tipPercent;
 		 totalBill= mealCost + tipAmount;
+		 	print("Leave the Restaurant");
 	}
 }
