@@ -11,9 +11,10 @@ public class ifStatement : MonoBehaviour {
 
 	void Update () {
 		if(input.text == password) {
-			print("You know the password");
+			print("You know the password.");
 		}
 	}
+	
 
 }
 	
