@@ -1,0 +1,15 @@
+Variables are parts of code that hold information. When the computer is told to run a code, the variables are read and calculated.
+There are different "types" of variables, such as:
+
+Integral Types : int
+
+Floating Point Types : float and double
+
+Decimal Types : decimal
+
+Boolean Types (bool) : true or false values 
+
+Nullable Types : Nullable data types
+
+Once the type of variable is chosen, it then needs to be declared by giving it a name and date type. The name of a variable
+can also be called "identifier". It is best if the identifier is descriptive of the data the variable will contain.  
