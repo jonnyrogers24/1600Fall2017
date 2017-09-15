@@ -1,0 +1,6 @@
+Quaternion.Identity; means 0 in rotate value
+
+vectors turn on x;y;z
+so
+quaternion points on x;y;z
+
