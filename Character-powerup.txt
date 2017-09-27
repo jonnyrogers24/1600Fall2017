@@ -1,0 +1,3 @@
+create a script where a character makes contact with power up
+-power up
+-character
