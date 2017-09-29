@@ -5,15 +5,18 @@ using UnityEngine.UI;
 
 public class RunGame : MonoBehaviour {
 
-	public Toggle toggle; 
-	
-	// Update is called once per frame
-	void Update () {
-		if(toggle.isOn)
+	public Toggle toggle;
+    public float health = 100;
+
+    // Update is called once per frame
+    void Update () {
+		if (toggle.isOn)
 		{
 			print("Play Game");
 		} else {
-			print("Can't Play");
+			print("Can't Play.");
 		}
+
+		health -= 0.01f;
 	}
 }
