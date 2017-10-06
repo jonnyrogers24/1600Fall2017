@@ -12,7 +12,5 @@ public class ScopeAndAccess : MonoBehaviour {
 		
 		int newScore = 10;
 		print(newScore);
-
 	}
-
 }
