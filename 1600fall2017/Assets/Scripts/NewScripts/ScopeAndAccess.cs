@@ -9,7 +9,7 @@ public class ScopeAndAccess : MonoBehaviour {
 	public int score = 100;
 
 	void Start () {
-		
+	
 		int newScore = 10;
 		print(newScore);
 	}
