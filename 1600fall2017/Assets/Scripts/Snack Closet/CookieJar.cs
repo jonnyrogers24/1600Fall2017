@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class CookieJar : SnackCloset {
 
-	public int totalCookies = 20;
+	public int totalCookies; 
+	
+	void Start () { 
+		print("There are " + totalCookies + " cookies in the cookie jar!");
+	}
 
 }
