@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class UI_Health_Bar : MonoBehaviour {
 	public float powerLevel = 0.1f; 
 	public float amountToAdd = 0.01f;
 
+	public float amountToSubtract = -0.1f; 
 	public enum PowerUpType
 	{
 		PowerUp,
@@ -40,13 +42,12 @@ public class UI_Health_Bar : MonoBehaviour {
 	}
 
 	IEnumerator PowerDownBar () {
-		float tempAmount = powerLevel;
-		float fillAmount = healthBar.fillAmount; 
-		while (tempAmount > 0)
-		{
-			 fillAmount = tempAmount - amountToAdd;
-			 healthBar.fillAmount = fillAmount;  
+		if (healthBar.fillAmount > 0.1f)
+		{			
+			healthBar.fillAmount += amountToSubtract;
+			print(healthBar.fillAmount); 
 			yield return new WaitForSeconds(barTime);
 		}
+		
 	}	
 }
