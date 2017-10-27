@@ -5,12 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_Health_Bar : MonoBehaviour {
-
+	public GameObject gameOverUI; 
 	public Image healthBar; 
-	public float barTime = 0.1f;
+	public float barFillTime = 0.1f;
 	public float powerLevel = 0.1f; 
-	public float amountToAdd = 0.01f;
-
+	public float amountToAdd = 0.1f;
 	public float amountToSubtract = -0.1f; 
 	public enum PowerUpType
 	{
@@ -34,19 +33,26 @@ public class UI_Health_Bar : MonoBehaviour {
 	}
 
 	IEnumerator PowerUpBar () {
-		while (healthBar.fillAmount < 1)
+		if (healthBar.fillAmount < 1)
 		{
 			healthBar.fillAmount += amountToAdd; 
-			yield return new WaitForSeconds(barTime);
+			yield return new WaitForSeconds(barFillTime);
 		}
 	}
 
 	IEnumerator PowerDownBar () {
-		if (healthBar.fillAmount > 0.1f)
+		if (healthBar.fillAmount > 0)
 		{			
 			healthBar.fillAmount += amountToSubtract;
 			print(healthBar.fillAmount); 
-			yield return new WaitForSeconds(barTime);
+			yield return new WaitForSeconds(barFillTime);
+			
+		}
+
+		if (healthBar.fillAmount == 0)
+		{
+			gameOverUI.SetActive(true);
+			CharacterControl.gameOver = true; 
 		}
 		
 	}	
