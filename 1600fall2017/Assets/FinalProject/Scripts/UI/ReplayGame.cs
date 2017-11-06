@@ -7,12 +7,14 @@ public class ReplayGame : MonoBehaviour {
 	public Transform player; 
 	public UI_Health_Bar uiBar; 
 	public GameObject GameOverUI;
+    public GameObject Player1;
 
 	public static Vector3 startPosition; 
 	private float fillAmount; 
 
 	void Start()
 	{
+        Player1 = GameObject.FindGameObjectWithTag("Player");
 		startPosition = player.position; 
 		fillAmount = uiBar.healthBar.fillAmount; 
 		GameOverUI.SetActive(false);	
@@ -23,5 +25,6 @@ public class ReplayGame : MonoBehaviour {
 		player.position = startPosition;
 		uiBar.healthBar.fillAmount = fillAmount; 
 		GameOverUI.SetActive(false);
+        Player1.SetActive(true);
 	}
 }

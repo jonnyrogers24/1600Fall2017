@@ -5,7 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_Health_Bar : MonoBehaviour {
-	public GameObject gameOverUI; 
+	public GameObject gameOverUI;
+	public Text endGameText; 
+    public GameObject Player;
 	public Image healthBar; 
 	public float barFillTime = 0.1f;
 	public float powerLevel = 0.1f; 
@@ -14,8 +16,14 @@ public class UI_Health_Bar : MonoBehaviour {
 	public enum PowerUpType
 	{
 		PowerUp,
-		PowerDown
+		PowerDown,
+		Win,
 	}
+
+    public void Start()
+    {
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
 
 	public PowerUpType powerUp; 
 	void OnTriggerEnter() {
@@ -28,6 +36,9 @@ public class UI_Health_Bar : MonoBehaviour {
 
 			case PowerUpType.PowerDown:
 				StartCoroutine(PowerDownBar());
+			break; 
+			case PowerUpType.Win:
+				EndGame("You Win");
 			break; 
 		}
 	}
@@ -51,9 +62,21 @@ public class UI_Health_Bar : MonoBehaviour {
 
 		if (healthBar.fillAmount == 0)
 		{
-			gameOverUI.SetActive(true);
-			CharacterControl.gameOver = true; 
+			EndGame("Game Over"); 
 		}
 		
-	}	
-}
+	}
+    private void Update()
+    {
+        if (healthBar.fillAmount == 0)
+        {
+            Player.SetActive(false);
+        }
+    }
+
+	void EndGame (string _text){
+			endGameText.text = _text; 
+			gameOverUI.SetActive(true);
+			CharacterControl.gameOver = true;
+		}
+	}
