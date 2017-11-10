@@ -32,3 +32,13 @@ sysinfo.txt
 *.apk
 *.unitypackage
 *.DS_Store
+
+1600fall2017/Assets/Materials\.meta
+
+1600fall2017/Assets/Materials/LineRenderer\.mat
+
+1600fall2017/Assets/Materials/LineRenderer\.mat\.meta
+
+1600fall2017/Assets/Materials/LineRenderer\.psd
+
+1600fall2017/Assets/Materials/LineRenderer\.psd\.meta
