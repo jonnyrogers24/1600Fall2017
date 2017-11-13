@@ -15,19 +15,19 @@ public class CharacterMove : MonoBehaviour {
 
 
 	void Update () {
-		moveVector3.y -= gravity * Time.deltaTime;
+		//moveVector3.y -= gravity * Time.deltaTime;
 
-		if(characterController.isGrounded && !gameOver)
-		{
-			if(Input.GetKeyDown(KeyCode.Space))
-			{
-				moveVector3.y = jumpForce * Time.deltaTime;
-			}
+		//if(characterController.isGrounded && !gameOver)
+		//{
+			//if(Input.GetKeyDown(KeyCode.Space))
+			//{
+			//	moveVector3.y = jumpForce * Time.deltaTime;
+			//}
 			
 		
+		//}
 			moveVector3.x = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-			//moveVector3.y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-		}
+			moveVector3.y = Input.GetAxis("Vertical") * speed * Time.deltaTime;
 		 
 		characterController.Move(moveVector3);
 
