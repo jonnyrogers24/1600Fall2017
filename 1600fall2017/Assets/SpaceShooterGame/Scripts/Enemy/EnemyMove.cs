@@ -10,6 +10,7 @@ public class EnemyMove : MonoBehaviour {
 	//public LayerMask playerLayer; 
 	//public bool spaceshipInRange; 
 	void Start () {
+		
 
 		//because the spaceship(player) has a CharacterController, the enemy is trying to find it. 
 		spaceShip = FindObjectOfType<CharacterController>();
