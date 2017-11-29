@@ -28,7 +28,6 @@ public class CharacterMove : MonoBehaviour {
 				Instantiate (laser, laserSpawn.position, laserSpawn.rotation);
 			}
 		}
-
 	void FixedUpdate () {
 		//moveVector3.y -= gravity * Time.deltaTime;
 
