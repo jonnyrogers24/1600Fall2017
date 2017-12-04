@@ -22,25 +22,25 @@ public class UI_Health_Bar : MonoBehaviour {
 
     public void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
-    }
+        //Player = GameObject.FindGameObjectWithTag("Player");
+    //}
 
-	public PowerUpType powerUp; 
-	void OnTriggerEnter() {
+	//public PowerUpType powerUp; 
+	//void OnTriggerEnter() {
 
-		switch (powerUp)
-		{
-			case PowerUpType.PowerUp:
-				StartCoroutine(PowerUpBar());
-			break;
+		//switch (powerUp)
+		//{
+		//	case PowerUpType.PowerUp:
+		//		StartCoroutine(PowerUpBar());
+		//	break;
 
-			case PowerUpType.PowerDown:
-				StartCoroutine(PowerDownBar());
-			break; 
-			case PowerUpType.Win:
-				EndGame("You Win");
-			break; 
-		}
+		//	case PowerUpType.PowerDown:
+		//		StartCoroutine(PowerDownBar());
+		//	break; 
+		//	case PowerUpType.Win:
+		//		EndGame("You Win");
+		//	break; 
+	//	}
 	}
 
 	IEnumerator PowerUpBar () {

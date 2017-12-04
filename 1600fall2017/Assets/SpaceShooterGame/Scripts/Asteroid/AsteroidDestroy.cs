@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI; 
 public class AsteroidDestroy : MonoBehaviour 
 {
 	public GameObject explosion; 
-	void OnTriggerEnter (Collider other){
-		if (other.tag == "BoundaryBox")
+	void OnTriggerEnter (Collider other)
 		{
-			return;   
+			if (other.tag == "BoundaryBox")
+			{
+				return;   
+			}
+			Instantiate (explosion, transform.position, transform.rotation);
+			Destroy(other.gameObject);
+			Destroy(gameObject);
 		}
-		Instantiate (explosion, transform.position, transform.rotation);
-		Destroy(other.gameObject);
-		Destroy(gameObject);
 	}
-}
