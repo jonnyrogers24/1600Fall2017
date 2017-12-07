@@ -11,6 +11,11 @@ public class AsteroidDestroy : MonoBehaviour
 			{
 				return;   
 			}
+			if ( other.tag == "Enemy")
+			{
+				return; 
+			}
+			
 			Instantiate (explosion, transform.position, transform.rotation);
 			Destroy(other.gameObject);
 			Destroy(gameObject);

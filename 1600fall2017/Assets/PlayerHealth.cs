@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
+public class PlayerHealth : MonoBehaviour {
 
-public class EnemyDestroy : MonoBehaviour {
 public GameObject explosion;  
-  public GameObject Enemy;
+  public GameObject Player;
 	public Image healthBar; 
 	public float barFillTime = 0.1f; 
 	public float amountToAdd = 0.1f;
@@ -18,7 +18,7 @@ public GameObject explosion;
 	}
 	void Start ()
 	{
-        Enemy = GameObject.FindGameObjectWithTag("Enemy");
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 	public PowerUpType powerUp; 
 	void OnTriggerEnter() {
@@ -66,9 +66,10 @@ public GameObject explosion;
         if (healthBar.fillAmount == 0)
         {
 			Instantiate (explosion, transform.position, transform.rotation);
-            Enemy.SetActive(false);
+            Player.SetActive(false);
         }
     }
 }
+
 
 

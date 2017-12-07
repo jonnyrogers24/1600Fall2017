@@ -4,7 +4,6 @@ using UnityEngine;
 public class CharacterMove : MonoBehaviour {
 
 	public CharacterController characterController;
-	public static bool gameOver;
 	public float gravity = 9.81f;
 	public float speed = 12;
 	public Vector3 moveVector3; 
@@ -26,6 +25,9 @@ public class CharacterMove : MonoBehaviour {
 				nextFire = Time.time + fireRate; 
 			//instatiate will give us the new values for the vector3 and the quatornian when the lasers are activated by the player.
 				Instantiate (laser, laserSpawn.position, laserSpawn.rotation);
+				{
+					return; 
+				}
 			}
 		}
 	void FixedUpdate () {

@@ -5,12 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class UI_Health_Bar : MonoBehaviour {
-	public GameObject gameOverUI;
-	public Text endGameText; 
+	//public GameObject gameOverUI;
+	//public Text endGameText; 
     public GameObject Player;
 	public Image healthBar; 
-	public float barFillTime = 0.1f;
-	public float powerLevel = 0.1f; 
+	public float barFillTime = 0.1f; 
 	public float amountToAdd = 0.1f;
 	public float amountToSubtract = -0.1f; 
 	public enum PowerUpType
@@ -22,25 +21,25 @@ public class UI_Health_Bar : MonoBehaviour {
 
     public void Start()
     {
-        //Player = GameObject.FindGameObjectWithTag("Player");
-    //}
+        Player = GameObject.FindGameObjectWithTag("Player");
+    }
 
-	//public PowerUpType powerUp; 
-	//void OnTriggerEnter() {
+	public PowerUpType powerUp; 
+	void OnTriggerEnter() {
 
-		//switch (powerUp)
-		//{
-		//	case PowerUpType.PowerUp:
-		//		StartCoroutine(PowerUpBar());
-		//	break;
+		switch (powerUp)
+		{
+			case PowerUpType.PowerUp:
+				StartCoroutine(PowerUpBar());
+			break;
 
-		//	case PowerUpType.PowerDown:
-		//		StartCoroutine(PowerDownBar());
-		//	break; 
-		//	case PowerUpType.Win:
-		//		EndGame("You Win");
-		//	break; 
-	//	}
+			case PowerUpType.PowerDown:
+				StartCoroutine(PowerDownBar());
+			break; 
+			//case PowerUpType.Win:
+				//EndGame("You Win");
+			//break; 
+		}
 	}
 
 	IEnumerator PowerUpBar () {
@@ -59,13 +58,8 @@ public class UI_Health_Bar : MonoBehaviour {
 			yield return new WaitForSeconds(barFillTime);
 			
 		}
-
-		if (healthBar.fillAmount == 0)
-		{
-			EndGame("Game Over"); 
-		}
-		
 	}
+
     private void Update()
     {
         if (healthBar.fillAmount == 0)
@@ -73,10 +67,10 @@ public class UI_Health_Bar : MonoBehaviour {
             Player.SetActive(false);
         }
     }
-
-	void EndGame (string _text){
-			endGameText.text = _text; 
-			gameOverUI.SetActive(true);
-			CharacterControl.gameOver = true;
-		}
-	}
+}
+	//void EndGame (string _text){
+	//		endGameText.text = _text; 
+	//		gameOverUI.SetActive(true);
+	//		CharacterControl.gameOver = true;
+	//	}
+	//}
