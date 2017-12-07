@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI; 
 public class AsteroidDestroy : MonoBehaviour 
 {
-	public GameObject explosion; 
+	public GameObject explosion;   
+  
 	void OnTriggerEnter (Collider other)
 		{
 			if (other.tag == "BoundaryBox")
@@ -15,9 +16,14 @@ public class AsteroidDestroy : MonoBehaviour
 			{
 				return; 
 			}
-			
+	
 			Instantiate (explosion, transform.position, transform.rotation);
-			Destroy(other.gameObject);
+            Destroy(other.gameObject);
 			Destroy(gameObject);
-		}
-	}
+        }
+    }
+
+
+
+
+

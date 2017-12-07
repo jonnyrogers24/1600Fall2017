@@ -8,6 +8,8 @@ public class CharacterMove : MonoBehaviour {
 	public float speed = 12;
 	public Vector3 moveVector3; 
 	public float jumpForce = 20;  
+	public GameObject Player; 
+	public GameObject explosion; 
 
 	//laser variables
 	public GameObject laser; 
@@ -47,5 +49,19 @@ public class CharacterMove : MonoBehaviour {
 		 
 		characterController.Move(moveVector3);
 
+	}
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.tag == "BoundaryBox")
+			{
+				return;   
+			}
+		if (other.tag == "Player")
+			{
+				return;   
+			}	
+		Instantiate (explosion, transform.position, transform.rotation);
+		Destroy(other.gameObject);
+		Destroy(gameObject);
 	}
 }
