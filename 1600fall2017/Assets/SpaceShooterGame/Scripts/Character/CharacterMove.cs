@@ -50,18 +50,4 @@ public class CharacterMove : MonoBehaviour {
 		characterController.Move(moveVector3);
 
 	}
-	void OnTriggerEnter(Collider other)
-	{
-		if (other.tag == "BoundaryBox")
-			{
-				return;   
-			}
-		if (other.tag == "Player")
-			{
-				return;   
-			}	
-		Instantiate (explosion, transform.position, transform.rotation);
-		Destroy(other.gameObject);
-		Destroy(gameObject);
-	}
 }
