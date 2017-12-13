@@ -13,7 +13,15 @@ public class LaserMove : MonoBehaviour
 	}
 	void OnTriggerEnter(Collider other)
 	{
-		Destroy(other.gameObject);
-		Destroy(gameObject);
+		if (other.tag == "Level")
+			{
+				return;
+			}
+		if (other.tag == "BoundaryBox")
+			{
+				return;
+			}
+			Destroy(other.gameObject);
+			Destroy(gameObject);
 	}
 }

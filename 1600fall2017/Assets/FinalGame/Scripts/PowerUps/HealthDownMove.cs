@@ -14,15 +14,8 @@ public GameObject explosion;
 		}
 	void Update () 
 	{
-		{
 		//the following is what tells the enemy player to reach, which is the data from the spaceship(player)
-		transform.position = Vector3.MoveTowards (transform.position, Player.transform.position, moveSpeed * Time.deltaTime);
-		}
-	}
-
-	void OnTriggerEnter(Collider other)
-	{
-		Instantiate (explosion, transform.position, transform.rotation);
+		transform.position = Vector3.MoveTowards (transform.position, Player.transform.position, moveSpeed * Time.deltaTime);		
 	}
 
 			
