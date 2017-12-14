@@ -4,15 +4,20 @@ using UnityEngine;
 using UnityEngine.UI; 
 
 public class PowerUp : MonoBehaviour {
+[SerializeField] private Transform player;
 
+[SerializeField] private Transform respawnPoint;
 public GameObject Player; 
 public Slider healthBar;
 public float amountToSubtract;
 public float amountToAdd; 
+public Text endGameText; 
+public GameObject gameOverUI;
 public enum PowerUpType
 	{
 		PowerUp,
 		PowerDown,
+		Win,
 	}
 public PowerUpType powerUp;
 	void OnTriggerEnter(Collider Other)
@@ -26,6 +31,10 @@ public PowerUpType powerUp;
 			case PowerUpType.PowerDown:
 				StartCoroutine(PowerDownBar());
 			break;  
+			
+			case PowerUpType.Win:
+				EndGame("You Win");
+			break;
 		}	
 	}
 	IEnumerator PowerUpBar()
@@ -55,7 +64,15 @@ public PowerUpType powerUp;
 
 		if(PlayerManager.health <= 0)
 		{
-			 Player.SetActive(false);
+			 player.transform.position = respawnPoint.transform.position; 
+			 Player.SetActive(true);
 		}
 	}
+	void EndGame (string _text)
+		{
+			endGameText.text = _text; 
+			gameOverUI.SetActive(true);
+			CharacterControl.gameOver = true;
+		}
 }
+

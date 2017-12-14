@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Respawn : MonoBehaviour {
-
-	void OnTriggerEnter() 
+[SerializeField] private Transform player;
+[SerializeField] private GameObject Player;
+[SerializeField] private Transform respawnPoint; 
+	void OnTriggerEnter(Collider other) 
 	{
-		ReplayGame.startPosition = transform.position; 
+		player.transform.position = respawnPoint.transform.position; 
+		Player.SetActive(true);
 	}	
 }
