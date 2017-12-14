@@ -12,7 +12,7 @@ public GameObject explosion;
 		{
 			Player = GameObject.FindGameObjectWithTag("Player");
 		}
-	void Update () 
+	 void Update () 
 	{
 		//the following is what tells the enemy player to reach, which is the data from the spaceship(player)
 		transform.position = Vector3.MoveTowards (transform.position, Player.transform.position, moveSpeed * Time.deltaTime);		

@@ -7,8 +7,8 @@ public class PowerUp : MonoBehaviour {
 
 public GameObject Player; 
 public Slider healthBar;
-public int amountToSubtract;
-public int amountToAdd; 
+public float amountToSubtract;
+public float amountToAdd; 
 public enum PowerUpType
 	{
 		PowerUp,
@@ -30,8 +30,9 @@ public PowerUpType powerUp;
 	}
 	IEnumerator PowerUpBar()
 	{
-		if(PlayerManager.health < 100 )
+		if(healthBar.value < 1 )
 		{
+			
 			healthBar.value = PlayerManager.health;
 			PlayerManager.health += amountToAdd;
 			print(PlayerManager.health);
@@ -40,9 +41,9 @@ public PowerUpType powerUp;
 	}
 	IEnumerator PowerDownBar()
 	{
-		if(PlayerManager.health > 0 )
+		if(healthBar.value > 0 )
 		{
-			healthBar.value = PlayerManager.health;
+			healthBar.value = PlayerManager.health - amountToSubtract;
 			PlayerManager.health -= amountToSubtract;
 			print(PlayerManager.health);
 			yield return new WaitForSeconds(PlayerManager.health); 
